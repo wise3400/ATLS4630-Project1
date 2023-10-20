@@ -6,6 +6,8 @@
     <title>The Wilson Weather App</title>
     <script defer src="project1.js"></script>
     <link href = "project1.css" rel = "stylesheet">
+   
+
 </head>
 
 
@@ -14,14 +16,15 @@
         <h1>The Wilson Weather App </h1>        
     </header>
    
-<div id = "container">  
+<div id = "container" class = "weatherContainer">  
         <label for = "location">Location: </label>
         <input type = "text" id = "location" placeholder = "Pls enter city or state">
         <button type = "button" id = "searchButton">Search </button>     
      
     
     <div id = "getWeatherInformation">
-    
+      
+
         <h2 id = "Current-weather">Current Weather: </h2>
         <h2 id = "Place">Your Location: </h2>
         <h2 id = "Temp"> Temperature: </h2>
@@ -29,7 +32,7 @@
         <h2 id = "humid">Humidity: </h2>
         <h2 id = "wind-speed">Wind: </h2>
     </div>
-
+    <img id = "pics" height = "300" width = 300>
 </div>
 </body>
 </html>

@@ -43,9 +43,6 @@ nav, ul, li, button:hover
     margin: 0 auto;
     padding: 15px; 
     background-color: white;
-  
-   
-    
 }
    
 
@@ -87,7 +84,8 @@ p
 img
 {
     margin: 0px;
-    max-width: 50%;   
+    max-width: 50%; 
+    border:none;  
 }
 
 @media screen and (min-width: 641px) and (max-width: 900px) {

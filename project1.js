@@ -23,6 +23,14 @@ function showWeatherInfo(getWeatherData)
     document.getElementById("humid").innerHTML = "Humidity: " + getWeatherData.main.humidity + "%";
     document.getElementById("wind-speed").innerHTML = "Wind: " + getWeatherData.wind.speed + " m/s";
 
+
+    if(getWeatherData.weather[0].description == "clear sky")
+    {
+       document.getElementById("pics").src = "clear.jpg";
+       document.getElementById("pics").alt = "Clear pic";
+    
+    }
+
 }
 
 
