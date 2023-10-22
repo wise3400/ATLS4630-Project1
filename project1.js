@@ -23,8 +23,7 @@ function showWeatherInfo(getWeatherData)
     document.getElementById("humid").innerHTML = "Humidity: " + "<br>" + getWeatherData.main.humidity + "%";
     document.getElementById("feels-like").innerHTML = "Feels like: " + "<br>" + getWeatherData.main.feels_like + "°C";
     
-    
-
+   
     // https://media.tenor.com/gznLWsJjaMAAAAAC/daytime-miving.gif
     if(getWeatherData.weather[0].description == "clear sky")
     {
@@ -45,56 +44,56 @@ function showWeatherInfo(getWeatherData)
        document.getElementById("pics").alt = "Scattered Clouds";
     }
 
-     // https://i.gifer.com/7RtV.gif
-     if(getWeatherData.weather[0].description == "overcast clouds")
-     {
+   // https://i.gifer.com/7RtV.gif
+   if(getWeatherData.weather[0].description == "overcast clouds")
+   {
         document.getElementById("pics").src = "overcast.gif";
         document.getElementById("pics").alt = "Overcast Clouds";
-     }
+   }
 
-      // https://media.tenor.com/5sMqxZU0224AAAAd/heavy-rain-rainy-day.gif
-      if(getWeatherData.weather[0].description == "shower rain")
-      {
+   // https://media.tenor.com/5sMqxZU0224AAAAd/heavy-rain-rainy-day.gif
+   if(getWeatherData.weather[0].description == "shower rain")
+   {
          document.getElementById("pics").src = "heavy-rain.gif";
          document.getElementById("pics").alt = "Heavy Rain";
-      }
+   }
 
-      // https://media.tenor.com/NsxcRYfc_PYAAAAC/street-lights-rain.gif
-      if(getWeatherData.weather[0].description == "light rain")
-      {
+   // https://media.tenor.com/NsxcRYfc_PYAAAAC/street-lights-rain.gif
+   if(getWeatherData.weather[0].description == "light rain")
+   {
          document.getElementById("pics").src = "light-rain.gif";
          document.getElementById("pics").alt = "Light Rain";
-      }
-       // https://media.tenor.com/szl0uLjxqVYAAAAC/snow-light.gif
-       if(getWeatherData.weather[0].description == "light snow")
-       {
-          document.getElementById("pics").src = "light-snow.gif";
-          document.getElementById("pics").alt = "Light Snow";
-       }
-       // https://media0.giphy.com/media/JjrDsvilNKgw0/giphy.gif
-       if(getWeatherData.weather[0].description == "heavy intensity rain")
-       {
-          document.getElementById("pics").src = "heavy-rain1.gif";
-          document.getElementById("pics").alt = "Heavy Rain";
-       }
-       // https://i.pinimg.com/originals/d9/a6/ee/d9a6eeb44e2edf61d515c7622264c2fc.gif
-       if(getWeatherData.weather[0].description == "few clouds")
-       {
+   }
+   // https://media.tenor.com/szl0uLjxqVYAAAAC/snow-light.gif
+   if(getWeatherData.weather[0].description == "light snow")
+   {
+         document.getElementById("pics").src = "light-snow.gif";
+         document.getElementById("pics").alt = "Light Snow";
+   }
+   // https://media0.giphy.com/media/JjrDsvilNKgw0/giphy.gif
+   if(getWeatherData.weather[0].description == "heavy intensity rain")
+   {
+         document.getElementById("pics").src = "heavy-rain1.gif";
+         document.getElementById("pics").alt = "Heavy Rain";
+   }
+   // https://i.pinimg.com/originals/d9/a6/ee/d9a6eeb44e2edf61d515c7622264c2fc.gif
+   if(getWeatherData.weather[0].description == "few clouds")
+   {
           document.getElementById("pics").src = "few-clouds.gif";
           document.getElementById("pics").alt = "Few Clouds";
-       }
-         // https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/625a747a-061b-477d-958f-a0d6cea9e4cb/dax9bd4-dd0da73d-5b6e-415c-b05e-19471f366e5a.jpg/v1/fill/w_1024,h_768,q_75,strp/broken_clouds_by_kevintheman_dax9bd4-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzY4IiwicGF0aCI6IlwvZlwvNjI1YTc0N2EtMDYxYi00NzdkLTk1OGYtYTBkNmNlYTllNGNiXC9kYXg5YmQ0LWRkMGRhNzNkLTViNmUtNDE1Yy1iMDVlLTE5NDcxZjM2NmU1YS5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.2HBtScMyydNDUe606gk2Jd8RHs6iM-76feSI7Dc3sLw
-         if(getWeatherData.weather[0].description == "broken clouds")
-         {
-            document.getElementById("pics").src = "broken-clouds.jpg";
-            document.getElementById("pics").alt = "Broken Clouds";
-         }
-        //https://i.gifer.com/7Jy7.gif
-       if(getWeatherData.weather[0].description == "smoke")
-       {
-          document.getElementById("pics").src = "hazy.gif";
-          document.getElementById("pics").alt = "Hazy";
-       }
+   }
+   // https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/625a747a-061b-477d-958f-a0d6cea9e4cb/dax9bd4-dd0da73d-5b6e-415c-b05e-19471f366e5a.jpg/v1/fill/w_1024,h_768,q_75,strp/broken_clouds_by_kevintheman_dax9bd4-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzY4IiwicGF0aCI6IlwvZlwvNjI1YTc0N2EtMDYxYi00NzdkLTk1OGYtYTBkNmNlYTllNGNiXC9kYXg5YmQ0LWRkMGRhNzNkLTViNmUtNDE1Yy1iMDVlLTE5NDcxZjM2NmU1YS5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.2HBtScMyydNDUe606gk2Jd8RHs6iM-76feSI7Dc3sLw
+   if(getWeatherData.weather[0].description == "broken clouds")
+   {
+         document.getElementById("pics").src = "broken-clouds.jpg";
+         document.getElementById("pics").alt = "Broken Clouds";
+   }
+   //https://i.gifer.com/7Jy7.gif
+   if(getWeatherData.weather[0].description == "smoke")
+   {
+         document.getElementById("pics").src = "hazy.gif";
+         document.getElementById("pics").alt = "Hazy";
+   }
 
 }
 
