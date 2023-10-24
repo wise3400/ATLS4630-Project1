@@ -17,11 +17,22 @@ function showWeatherInfo(getWeatherData)
 {
     console.log(getWeatherData);
     document.getElementById("Place").innerHTML = "Location: " + "<br>" + getWeatherData.name + ", " + getWeatherData.sys.country;
+    document.getElementById("Place").style.display = 'block';
+    
     document.getElementById("Temp").innerHTML = "Temperature: " + "<br>" + getWeatherData.main.temp + "°C";
+    document.getElementById("Temp").style.display = 'block';
+
     document.getElementById("Current-weather").innerHTML = "Condition: " + "<br>" +  getWeatherData.weather[0].description;
+    document.getElementById("Current-weather").style.display = 'block';
+
     document.getElementById("wind-speed").innerHTML = "Wind Speed: " + "<br>" + getWeatherData.wind.speed + " m/s";
+    document.getElementById("wind-speed").style.display = 'block';
+   
     document.getElementById("humid").innerHTML = "Humidity: " + "<br>" + getWeatherData.main.humidity + "%";
+    document.getElementById("humid").style.display = 'block';
+
     document.getElementById("feels-like").innerHTML = "Feels like: " + "<br>" + getWeatherData.main.feels_like + "°C";
+    document.getElementById("feels-like").style.display = 'block';
     
     //const showImg = document.getElementById("pics").style.display = 'block';
     // https://media.tenor.com/gznLWsJjaMAAAAAC/daytime-miving.gif
