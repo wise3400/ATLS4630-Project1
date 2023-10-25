@@ -1,6 +1,7 @@
 const searchButton = document.getElementById('searchButton');
 const place = document.getElementById('location');
 const weatherInfo = document.getElementById('getWeatherInformation');
+const notFound = document.getElementById('notFound');
 
 
 // Used https://alwazkazi3.medium.com/creating-a-weather-app-using-api-javascript-4d7bb26bbc92 for reference.
@@ -8,9 +9,16 @@ searchButton.addEventListener('click', function()
 {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${place.value}&units=metric&appid=1b0a6e545914ac570a8519f74347368f`)
         .then(response => response.json())
-        .then(showWeatherInfo)
-        
-        
+        .then(showWeatherInfo) 
+
+        // Used https://rapidapi.com/guides/error-handling-fetch for reference.   
+        .catch(error => 
+            {
+                  
+                  document.getElementById("notFound").innerHTML = "City, state, or country not found. Please try again.";
+                  document.getElementById("notFound").style.display = 'block';
+                  
+            })
 });
 
 function showWeatherInfo(getWeatherData)
@@ -19,7 +27,7 @@ function showWeatherInfo(getWeatherData)
     document.getElementById("Place").innerHTML = "Location: " + "<br>" + getWeatherData.name + ", " + getWeatherData.sys.country;
     document.getElementById("Place").style.display = 'block';
     
-    document.getElementById("Temp").innerHTML = "Temperature: " + "<br>" + getWeatherData.main.temp + "°C";
+    document.getElementById("Temp").innerHTML = "Temperature: " + "<br>" + getWeatherData.main.temp + " °C";
     document.getElementById("Temp").style.display = 'block';
 
     document.getElementById("Current-weather").innerHTML = "Condition: " + "<br>" +  getWeatherData.weather[0].description;
@@ -128,7 +136,6 @@ function showWeatherInfo(getWeatherData)
          document.getElementById("pics").alt = "Hazy";
          document.getElementById("pics").style.display = 'block';
    }
-
 }
 
 

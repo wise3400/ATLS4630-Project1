@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Handy Dandy Weather App</title>
+    <title>The Weather App.</title>
     <script defer src="project1.js"></script>
     <link href = "project1.css" rel = "stylesheet">
    
@@ -13,18 +13,27 @@
 
 <body>
     <header>
-        <h1>The Handy Dandy Weather App </h1>        
+        <h1>The Weather App. </h1>        
     </header>
+
    
-<div id = "container1" class = "weatherContainer">  
+<div id = "container1" class = "weatherContainer"> 
+        <p>Welcome to the Weather App. To get started, enter a location below!</p> 
         <label for = "location"> </label>
-        <input type = "text" id = "location" placeholder = "Enter a location">
-        <button type = "button" id = "searchButton">Search </button>     
+        <input type = "text" id = "location" placeholder = "Enter a location" required>
+        <button type = "button" id = "searchButton">Search </button>   
+          
 </div>
 
 <div id = "container2" class = "weatherInformation">  
     <div id = "getWeatherInformation">
         
+        <!-- If a user inputs an invalid location, then this will show in the display that
+        the location is not found. -->
+        <h2 id = "notFound">City, state, or country not found.</h2>
+        
+        <!-- These display the location, temperature, condition, wind speed, humidity, and feels like
+        based on the inputted location by the user. -->
         <h2 id = "Place">Location:  </h2>
         <h2 id = "Temp"> Temperature: </h2>
         <h2 id = "Current-weather">Condition: </h2>
@@ -32,7 +41,8 @@
         <h2 id = "humid">Humidity: </h2>
         <h2 id = "feels-like">Feels like: </h2>
 
-        <img id = "pics" height = "500" width = "700">
+        <!-- Shows the image based on the condition -->
+        <img src = "clear-sky" id = "pics" height = "500" width = "700" alt = "Pictures based on weather condition">
     </div>
 </div>
 

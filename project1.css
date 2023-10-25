@@ -3,7 +3,7 @@
 
 header, footer
 { 
-    background: linear-gradient(135deg, #93a5cf, #e4efe9, #93a5cf);
+    background: rgb(88, 158, 182);
     padding: 15px;
     text-align: center;
 }
@@ -19,7 +19,7 @@ button
 {
     width: 9%;
     font-size: 15px;
-    background-color: #4A90E2; 
+    background-color: lightblue; 
     color: black;
     cursor: pointer;
     border:none;
@@ -27,7 +27,7 @@ button
 
 button:hover
 {
-    background-color: white;
+    background-color: lightgreen;
 }
 
 #container1 
@@ -35,7 +35,7 @@ button:hover
     max-width: 1000px;
     margin: 0 auto;
     padding: 15px; 
-    background: linear-gradient(135deg, #4A90E2, #1E467E);
+    background: white;
     text-align: center;
 }
 
@@ -44,7 +44,7 @@ button:hover
     max-width: 1000px;
     margin: 0 auto;
     padding: 15px; 
-    background: linear-gradient(135deg, #4A90E2, #1E467E);
+    background: lightblue;
     text-align: center;
 }
    
