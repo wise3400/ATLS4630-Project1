@@ -13,6 +13,8 @@ searchButton.addEventListener('click', function()
 
         // Used https://rapidapi.com/guides/error-handling-fetch for reference. 
         // https://lucymarmitchell.medium.com/using-then-catch-finally-to-handle-errors-in-javascript-promises-6de92bce3afc  
+        
+        // See if there's an error. If there is, do the things below:
         .catch(error => 
             {
                   
@@ -40,7 +42,7 @@ function showWeatherInfo(getWeatherData)
     document.getElementById("humid").innerHTML = "Humidity: " + "<br>" + getWeatherData.main.humidity + "%";
     document.getElementById("humid").style.display = 'block';
 
-    document.getElementById("feels-like").innerHTML = "Feels like: " + "<br>" + getWeatherData.main.feels_like + "°C";
+    document.getElementById("feels-like").innerHTML = "Feels like: " + "<br>" + getWeatherData.main.feels_like + " °C";
     document.getElementById("feels-like").style.display = 'block';
     
     //const showImg = document.getElementById("pics").style.display = 'block';
