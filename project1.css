@@ -44,7 +44,7 @@ button:hover
     max-width: 1000px;
     margin: 0 auto;
     padding: 15px; 
-    background: lightblue;
+    background: white;
     text-align: center;
 }
    
@@ -52,7 +52,8 @@ body
 {   
     margin: 0px;
     padding: 0px;
-    background-color: rgb(210, 223, 236);
+    /* https://i.gifer.com/RS5V.gif */
+    background-image: url("home-background.gif");
     font-family: 'Noto Sans Mende Kikakui', sans-serif;
 }
 
