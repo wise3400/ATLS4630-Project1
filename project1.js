@@ -115,6 +115,18 @@ function showWeatherInfo(getWeatherData)
          document.getElementById("pics").alt = "Hazy";
          document.getElementById("pics").style.display = 'block';
    }
+   if(getWeatherData.weather[0].description == "mist")
+   {
+         document.getElementById("pics").src = "mist.gif";
+         document.getElementById("pics").alt = "Mist";
+         document.getElementById("pics").style.display = 'block';
+   }
+   if(getWeatherData.weather[0].description == "hazy")
+   {
+         document.getElementById("pics").src = "hazy.gif";
+         document.getElementById("pics").alt = "Hazy";
+         document.getElementById("pics").style.display = 'block';
+   }
 
 }
 
