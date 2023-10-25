@@ -121,7 +121,7 @@ function showWeatherInfo(getWeatherData)
          document.getElementById("pics").alt = "Mist";
          document.getElementById("pics").style.display = 'block';
    }
-   if(getWeatherData.weather[0].description == "hazy")
+   if(getWeatherData.weather[0].description == "haze")
    {
          document.getElementById("pics").src = "hazy.gif";
          document.getElementById("pics").alt = "Hazy";
