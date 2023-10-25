@@ -11,7 +11,8 @@ searchButton.addEventListener('click', function()
         .then(response => response.json())
         .then(showWeatherInfo) 
 
-        // Used https://rapidapi.com/guides/error-handling-fetch for reference.   
+        // Used https://rapidapi.com/guides/error-handling-fetch for reference. 
+        // https://lucymarmitchell.medium.com/using-then-catch-finally-to-handle-errors-in-javascript-promises-6de92bce3afc  
         .catch(error => 
             {
                   
