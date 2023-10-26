@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mende+Kikakui&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mende+Kikakui&family=Raleway:wght@600&display=swap');
 
-header, footer
+header
 { 
     background: rgb(88, 158, 182);
     padding: 15px;
