@@ -1,9 +1,4 @@
 const place = document.getElementById('location');
-const searchButton = document.getElementById('searchButton');
-
-const weatherInfo = document.getElementById('getWeatherInformation');
-const notFound = document.getElementById('notFound');
-
 
 // Used https://alwazkazi3.medium.com/creating-a-weather-app-using-api-javascript-4d7bb26bbc92 for reference.
 searchButton.addEventListener('click', function() 
