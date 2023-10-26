@@ -1,25 +1,5 @@
 const place = document.getElementById('location');
 
-// Used https://alwazkazi3.medium.com/creating-a-weather-app-using-api-javascript-4d7bb26bbc92 for reference.
-searchButton.addEventListener('click', function() 
-{
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${place.value}&units=metric&appid=1b0a6e545914ac570a8519f74347368f`)
-        .then(response => response.json())
-        .then(showWeatherInfo) 
-
-        // Used https://rapidapi.com/guides/error-handling-fetch for reference. 
-        // https://lucymarmitchell.medium.com/using-then-catch-finally-to-handle-errors-in-javascript-promises-6de92bce3afc  
-        // Also used CHAT GPT here to see if this valid..
-        
-        //This catches the error. If there is in fact in error, do the things below:
-        .catch(error => 
-            {
-                  
-                  document.getElementById("notFound").innerHTML = "City, state, or country not found. Please try again.";
-                  document.getElementById("notFound").style.display = 'block';
-                  
-            })
-});
 
 function showWeatherInfo(getWeatherData)
 {
@@ -145,3 +125,25 @@ function showWeatherInfo(getWeatherData)
          document.getElementById("pics").style.display = 'block';
    }
 }
+
+// Used https://alwazkazi3.medium.com/creating-a-weather-app-using-api-javascript-4d7bb26bbc92 for reference.
+searchButton.addEventListener('click', function() 
+{
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${place.value}&units=metric&appid=1b0a6e545914ac570a8519f74347368f`)
+        .then(response => response.json())
+        .then(showWeatherInfo) 
+
+        // Used https://rapidapi.com/guides/error-handling-fetch for reference. 
+        // https://lucymarmitchell.medium.com/using-then-catch-finally-to-handle-errors-in-javascript-promises-6de92bce3afc  
+        // Also used CHAT GPT here to see if the .catch function is valid..
+        
+        //This catches the error. If there is in fact in error, do the things below:
+        .catch(error => 
+            {
+                  
+                  document.getElementById("notFound").innerHTML = "City, state, or country not found. Please try again.";
+                  document.getElementById("notFound").style.display = 'block';
+                  
+            })
+});
+
