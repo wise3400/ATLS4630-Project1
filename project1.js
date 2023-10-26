@@ -135,7 +135,7 @@ searchButton.addEventListener('click', function()
 
         // Used https://rapidapi.com/guides/error-handling-fetch for reference. 
         // https://lucymarmitchell.medium.com/using-then-catch-finally-to-handle-errors-in-javascript-promises-6de92bce3afc  
-        // Also used CHAT GPT here to see if the .catch function is valid..
+        // I also used CHAT GPT here to see if the .catch function is valid..
         
         //This catches the error. If there is in fact in error, do the things below:
         .catch(error => 
