@@ -1,5 +1,6 @@
-const searchButton = document.getElementById('searchButton');
 const place = document.getElementById('location');
+const searchButton = document.getElementById('searchButton');
+
 const weatherInfo = document.getElementById('getWeatherInformation');
 const notFound = document.getElementById('notFound');
 
@@ -13,7 +14,7 @@ searchButton.addEventListener('click', function()
 
         // Used https://rapidapi.com/guides/error-handling-fetch for reference. 
         // https://lucymarmitchell.medium.com/using-then-catch-finally-to-handle-errors-in-javascript-promises-6de92bce3afc  
-        
+        // Also used CHAT GPT here to see if this valid..
         // See if there's an error. If there is, do the things below:
         .catch(error => 
             {
@@ -31,7 +32,7 @@ function showWeatherInfo(getWeatherData)
     // Gets rid of the not found error if the location is valid.
     document.getElementById("notFound").style.display = 'none';
 
-    document.getElementById("Place").innerHTML = "Location: " + "<br>" + getWeatherData.name + ", " + getWeatherData.sys.country;
+    document.getElementById("Place").innerHTML = "Location: " + "<br>" + getWeatherData.name + " • " + getWeatherData.sys.country;
     document.getElementById("Place").style.display = 'block';
     
     document.getElementById("Temp").innerHTML = "Temperature: " + "<br>" + getWeatherData.main.temp + " °C";
