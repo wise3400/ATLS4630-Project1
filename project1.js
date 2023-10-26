@@ -1,128 +1,152 @@
 const place = document.getElementById('location');
 
+const loc =  document.getElementById("Place");
+const temp1 =  document.getElementById("Temp");
+const curWea =  document.getElementById("Current-weather");
+const windSp =  document.getElementById("wind-speed");
+const hu =  document.getElementById("humid");
+const fl =  document.getElementById("feels-like");
+
+const pictures = document.getElementById("pics");
+
 
 function showWeatherInfo(getWeatherData)
 {
     console.log(getWeatherData);
+   
+    if(getWeatherData.cod == 404)
+    {
+      document.getElementById("notFound").innerHTML = "City, state, or country not found. Please try again.";
+      document.getElementById("notFound").style.display = 'block';
+      pictures.style.display = 'none';
+      loc.style.display = 'none';
+      temp1.style.display = 'none';
+      curWea.style.display = 'none';
+      windSp.style.display = 'none';
+      hu.style.display = 'none';
+      fl.style.display = 'none';
+      return;
+    }
+
 
     // Gets rid of the not found error if the location is valid.
     document.getElementById("notFound").style.display = 'none';
 
-    document.getElementById("Place").innerHTML = "Location: " + "<br>" + getWeatherData.name + "<br>" + "<br>"+ "Country: " + "<br>" + getWeatherData.sys.country;
-    document.getElementById("Place").style.display = 'block';
+    loc.innerHTML = "Location: " + "<br>" + getWeatherData.name + "<br>" + "<br>"+ "Country: " + "<br>" + getWeatherData.sys.country;
+    loc.style.display = 'block';
     
-    document.getElementById("Temp").innerHTML = "Temperature: " + "<br>" + getWeatherData.main.temp + " °C";
-    document.getElementById("Temp").style.display = 'block';
+    temp1.innerHTML = "Temperature: " + "<br>" + getWeatherData.main.temp + " °C";
+    temp1.style.display = 'block';
     
 
-    document.getElementById("Current-weather").innerHTML = "Condition: " + "<br>" +  getWeatherData.weather[0].description;
-    document.getElementById("Current-weather").style.display = 'block';
+    curWea.innerHTML = "Condition: " + "<br>" +  getWeatherData.weather[0].description;
+    curWea.style.display = 'block';
    
 
-    document.getElementById("wind-speed").innerHTML = "Wind Speed: " + "<br>" + getWeatherData.wind.speed + " m/s";
-    document.getElementById("wind-speed").style.display = 'block';
+    windSp.innerHTML = "Wind Speed: " + "<br>" + getWeatherData.wind.speed + " m/s";
+    windSp.style.display = 'block';
     
    
-    document.getElementById("humid").innerHTML = "Humidity: " + "<br>" + getWeatherData.main.humidity + "%";
-    document.getElementById("humid").style.display = 'block';
+    hu.innerHTML = "Humidity: " + "<br>" + getWeatherData.main.humidity + "%";
+    hu.style.display = 'block';
   
 
-    document.getElementById("feels-like").innerHTML = "Feels like: " + "<br>" + getWeatherData.main.feels_like + " °C";
-    document.getElementById("feels-like").style.display = 'block';
+    fl.innerHTML = "Feels like: " + "<br>" + getWeatherData.main.feels_like + " °C";
+    fl.style.display = 'block';
    
     
     // https://media.tenor.com/gznLWsJjaMAAAAAC/daytime-miving.gif
     if(getWeatherData.weather[0].description == "clear sky")
     {
-       document.getElementById("pics").src = "clear-sky.gif";
-       document.getElementById("pics").alt = "Clear Sky";
-       document.getElementById("pics").style.display = 'block';
+       pictures.src = "clear-sky.gif";
+       pictures.alt = "Clear Sky";
+       pictures.style.display = 'block';
     }
     // https://media.tenor.com/D8N2aMZtd4YAAAAC/rain.gif
     if(getWeatherData.weather[0].description == "moderate rain")
     {
-       document.getElementById("pics").src = "rain.gif";
-       document.getElementById("pics").alt = "Raining";
-       document.getElementById("pics").style.display = 'block';
+      pictures.src = "rain.gif";
+      pictures.alt = "Raining";
+      pictures.style.display = 'block';
     }
     // https://media.tenor.com/WhD4AWN30YkAAAAC/clouds-moving.gif
     if(getWeatherData.weather[0].description == "scattered clouds")
     {
-       document.getElementById("pics").src = "scattered-clouds.gif";
-       document.getElementById("pics").alt = "Scattered Clouds";
-       document.getElementById("pics").style.display = 'block';
+      pictures.src = "scattered-clouds.gif";
+      pictures.alt = "Scattered Clouds";
+      pictures.style.display = 'block';
     }
 
    // https://i.gifer.com/7RtV.gif
    if(getWeatherData.weather[0].description == "overcast clouds")
    {
-        document.getElementById("pics").src = "overcast.gif";
-        document.getElementById("pics").alt = "Overcast Clouds";
-        document.getElementById("pics").style.display = 'block';
+      pictures.src = "overcast.gif";
+      pictures.alt = "Overcast Clouds";
+      pictures.style.display = 'block';
    }
 
    // https://media.tenor.com/5sMqxZU0224AAAAd/heavy-rain-rainy-day.gif
    if(getWeatherData.weather[0].description == "shower rain")
    {
-         document.getElementById("pics").src = "heavy-rain.gif";
-         document.getElementById("pics").alt = "Heavy Rain";
-         document.getElementById("pics").style.display = 'block';
+      pictures.src = "heavy-rain.gif";
+      pictures.alt = "Heavy Rain";
+      pictures.style.display = 'block';
    }
 
    // https://media.tenor.com/NsxcRYfc_PYAAAAC/street-lights-rain.gif
    if(getWeatherData.weather[0].description == "light rain")
    {
-         document.getElementById("pics").src = "light-rain.gif";
-         document.getElementById("pics").alt = "Light Rain";
-         document.getElementById("pics").style.display = 'block';
+      pictures.src  = "light-rain.gif";
+      pictures.alt  = "Light Rain";
+      pictures.style.display = 'block';
    }
    // https://media.tenor.com/szl0uLjxqVYAAAAC/snow-light.gif
    if(getWeatherData.weather[0].description == "light snow")
    {
-         document.getElementById("pics").src = "light-snow.gif";
-         document.getElementById("pics").alt = "Light Snow";
-         document.getElementById("pics").style.display = 'block';
+      pictures.src  = "light-snow.gif";
+      pictures.alt = "Light Snow";
+      pictures.style.display = 'block';
    }
    // https://media0.giphy.com/media/JjrDsvilNKgw0/giphy.gif
    if(getWeatherData.weather[0].description == "heavy intensity rain")
    {
-         document.getElementById("pics").src = "heavy-rain1.gif";
-         document.getElementById("pics").alt = "Heavy Rain";
-         document.getElementById("pics").style.display = 'block';
+      pictures.src = "heavy-rain1.gif";
+      pictures.alt = "Heavy Rain";
+      pictures.style.display = 'block';
    }
    // https://i.pinimg.com/originals/d9/a6/ee/d9a6eeb44e2edf61d515c7622264c2fc.gif
    if(getWeatherData.weather[0].description == "few clouds")
    {
-          document.getElementById("pics").src = "few-clouds.gif";
-          document.getElementById("pics").alt = "Few Clouds";
-          document.getElementById("pics").style.display = 'block';
+      pictures.src = "few-clouds.gif";
+      pictures.alt = "Few Clouds";
+      pictures.style.display = 'block';
    }
    // https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/625a747a-061b-477d-958f-a0d6cea9e4cb/dax9bd4-dd0da73d-5b6e-415c-b05e-19471f366e5a.jpg/v1/fill/w_1024,h_768,q_75,strp/broken_clouds_by_kevintheman_dax9bd4-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzY4IiwicGF0aCI6IlwvZlwvNjI1YTc0N2EtMDYxYi00NzdkLTk1OGYtYTBkNmNlYTllNGNiXC9kYXg5YmQ0LWRkMGRhNzNkLTViNmUtNDE1Yy1iMDVlLTE5NDcxZjM2NmU1YS5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.2HBtScMyydNDUe606gk2Jd8RHs6iM-76feSI7Dc3sLw
    if(getWeatherData.weather[0].description == "broken clouds")
    {
-         document.getElementById("pics").src = "broken-clouds.jpg";
-         document.getElementById("pics").alt = "Broken Clouds";
-         document.getElementById("pics").style.display = 'block';
+      pictures.src = "broken-clouds.jpg";
+      pictures.alt  = "Broken Clouds";
+      pictures.style.display = 'block';
    }
    //https://i.gifer.com/7Jy7.gif
    if(getWeatherData.weather[0].description == "smoke")
    {
-         document.getElementById("pics").src = "hazy.gif";
-         document.getElementById("pics").alt = "Hazy";
-         document.getElementById("pics").style.display = 'block';
+      pictures.src = "hazy.gif";
+      pictures.alt = "Hazy";
+      pictures.style.display = 'block';
    }
    if(getWeatherData.weather[0].description == "mist")
    {
-         document.getElementById("pics").src = "mist.gif";
-         document.getElementById("pics").alt = "Mist";
-         document.getElementById("pics").style.display = 'block';
+      pictures.src = "mist.gif";
+      pictures.alt = "Mist";
+      pictures.style.display  = 'block';
    }
    //https://i.gifer.com/7Jy7.gif
    if(getWeatherData.weather[0].description == "haze")
    {
-         document.getElementById("pics").src = "hazy.gif";
-         document.getElementById("pics").alt = "Hazy";
-         document.getElementById("pics").style.display = 'block';
+      pictures.src = "hazy.gif";
+      pictures.alt = "Hazy";
+      pictures.style.display  = 'block';
    }
 }
 
@@ -132,18 +156,5 @@ searchButton.addEventListener('click', function()
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${place.value}&units=metric&appid=1b0a6e545914ac570a8519f74347368f`)
         .then(response => response.json())
         .then(showWeatherInfo) 
-
-        // Used https://rapidapi.com/guides/error-handling-fetch for reference. 
-        // https://lucymarmitchell.medium.com/using-then-catch-finally-to-handle-errors-in-javascript-promises-6de92bce3afc  
-        // I also used CHAT GPT here to see if the .catch function is valid..
-        
-        //This catches the error. If there is in fact in error, do the things below:
-        .catch(error => 
-            {
-                  
-                  document.getElementById("notFound").innerHTML = "City, state, or country not found. Please try again.";
-                  document.getElementById("notFound").style.display = 'block';
-                  
-            })
 });
 
