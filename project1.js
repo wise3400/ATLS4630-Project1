@@ -101,7 +101,7 @@ function showWeatherInfo(getWeatherData)
       pictures.style.display = 'block';
    }
    // https://media.tenor.com/szl0uLjxqVYAAAAC/snow-light.gif
-   if(getWeatherData.weather[0].description == "light snow")
+   if(getWeatherData.weather[0].description == "light snow" || getWeatherData.weather[0].description == "snow")
    {
       pictures.src  = "light-snow.gif";
       pictures.alt = "Light Snow";
