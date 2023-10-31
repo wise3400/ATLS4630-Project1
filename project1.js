@@ -151,6 +151,7 @@ function showWeatherInfo(getWeatherData)
 }
 
 // Used https://alwazkazi3.medium.com/creating-a-weather-app-using-api-javascript-4d7bb26bbc92 for reference.
+// https://openweathermap.org/current
 searchButton.addEventListener('click', function() 
 {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${place.value}&units=metric&appid=1b0a6e545914ac570a8519f74347368f`)
